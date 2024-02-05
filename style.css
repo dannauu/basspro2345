@@ -1,0 +1,51 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.snap-container {
+	overflow-y: scroll; /* Keeps vertical scrolling */
+	height: 100vh; /* Full viewport height */
+	scroll-snap-type: y mandatory;
+	/* Ensure there's no horizontal overflow */
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	display: none; /* This will hide the scrollbar completely */
+}
+
+.hero {
+	height: 100vh;
+	scroll-snap-align: start;
+	width: 100%;
+	position: relative;
+	overflow: hidden; /* Ensures no overflow from videos */
+}
+
+.hero video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Ensures video covers the area without losing aspect ratio */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.overlay-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+}
+
+dialog {
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
